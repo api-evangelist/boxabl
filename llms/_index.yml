@@ -1,0 +1,34 @@
+generated: '2026-07-31'
+method: searched
+source: https://www.boxabl.com/llms.txt
+description: >-
+  BOXABL publishes its own llms.txt at the root of its marketing site, saved
+  here verbatim. It is a genuinely well-formed agent-facing index for a company
+  that publishes no API: an H1 + blockquote summary, then structured sections
+  for the three Casita product configurations (price ranges, floor area,
+  dimensions, detail-page URLs), the list of US states the homes currently ship
+  to, company facts (HQ, phone, email, Nasdaq ticker BXBL, founded 2017), a key
+  pages link list, and an explicit usage clause permitting answer-engine
+  crawling with a request that figures be linked back to their source page.
+  There is no API, endpoint, authentication or developer entry anywhere in it,
+  and no llms-full.txt is served. A verbatim provider file is never replaced by
+  a generated one; provenance is recorded here because llms.txt carries no
+  frontmatter of its own.
+files:
+- file: boxabl-llms.txt
+  method: searched
+  source: https://www.boxabl.com/llms.txt
+  status: 200
+  content_type: text/plain; charset=utf-8
+  bytes: 3126
+  sections: [Products, Where BOXABL can be installed, Company, Key pages, Usage]
+probes:
+- {url: 'https://www.boxabl.com/llms.txt', status: 200}
+- {url: 'https://boxabl.com/llms.txt', status: 200}
+- {url: 'https://www.boxabl.com/llms-full.txt', status: 404}
+- {url: 'https://api.boxabl.com/llms.txt', status: 0, note: host does not resolve}
+notes: >-
+  The site also ships an unusually permissive robots.txt that names GPTBot,
+  OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-User, PerplexityBot,
+  Perplexity-User, Google-Extended, Applebot-Extended and CCBot with Allow: /,
+  which is consistent with the llms.txt usage clause.

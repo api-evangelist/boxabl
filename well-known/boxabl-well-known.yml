@@ -1,0 +1,111 @@
+generated: '2026-07-31'
+method: searched
+description: >-
+  Results of probing the /.well-known/ discovery surface for every host
+  associated with BOXABL. BOXABL publishes no API, so there is no API host to
+  probe; the probe set is the marketing/commerce origin (www.boxabl.com and its
+  apex), the asset CDN (gcdn.boxabl.com), and the api.boxabl.com host, which
+  does not resolve in DNS. Status is the HTTP code observed at fetch time. Only
+  documents returning a real, correctly-typed payload were saved verbatim.
+  The single hit is a genuine RFC 9116 security.txt pointing at a published
+  responsible-disclosure / bug bounty policy.
+hosts:
+- host: https://www.boxabl.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    type: text/plain; charset=utf-8
+    file: boxabl-security.txt
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/mcp.json
+    status: 404
+  - path: /.well-known/aipref.json
+    status: 404
+  - path: /.well-known/ai.txt
+    status: 404
+  - path: /.well-known/content-signals
+    status: 404
+  - path: /.well-known/web-bot-auth
+    status: 404
+  - path: /.well-known/gpc.json
+    status: 404
+  - path: /.well-known/did.json
+    status: 404
+  - path: /.well-known/change-password
+    status: 404
+  - path: /.well-known/host-meta
+    status: 404
+- host: https://gcdn.boxabl.com
+  note: >-
+    Asset CDN. Serves the legal PDFs and the bug bounty policy referenced from
+    the security.txt Contact field, but publishes no discovery documents itself.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+- host: https://boxabl.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    note: same document as the www host; Canonical field names the www URL
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://api.boxabl.com
+  resolves: false
+  note: >-
+    NXDOMAIN. Every /.well-known/ and spec probe against this host returned
+    curl code 000 (no connection), not an HTTP status.
+security_txt:
+  file: boxabl-security.txt
+  fields:
+    Contact: https://gcdn.boxabl.com/documents/bugbounty/Boxabl%20Policy.pdf
+    Expires: '2027-01-01T08:00:00.000Z'
+    Preferred-Languages: en
+    Canonical: https://www.boxabl.com/.well-known/security.txt
+  rfc: RFC 9116
+  notes: >-
+    Well formed and unexpired. Contact is a URI to the policy PDF rather than a
+    mailto:; the policy itself names bugs@boxabl.com as the submission address.
+    No Encryption, Acknowledgments, Policy or Hiring fields are present.
+ai_preferences:
+  aipref: false
+  ai_txt: false
+  content_signals: false
+  web_bot_auth: false
+  robots_txt: https://www.boxabl.com/robots.txt
+  robots_note: >-
+    No machine-readable AI-preference document is published. BOXABL expresses its
+    AI-crawler policy in robots.txt instead, naming GPTBot, OAI-SearchBot,
+    ChatGPT-User, ClaudeBot, Claude-User, PerplexityBot, Perplexity-User,
+    Google-Extended, Applebot-Extended and CCBot with "Allow: /" (only
+    /catalog/styleguide/ is disallowed). The llms.txt Usage section restates this
+    permission and asks that figures be linked back to their source page.
+x-evidence:
+  fetched: '2026-07-31'
+  urls:
+  - {url: 'https://www.boxabl.com/.well-known/security.txt', http_status: 200, content_type: 'text/plain; charset=utf-8'}
+  - {url: 'https://gcdn.boxabl.com/documents/bugbounty/Boxabl%20Policy.pdf', http_status: 200, content_type: application/pdf, bytes: 52057}

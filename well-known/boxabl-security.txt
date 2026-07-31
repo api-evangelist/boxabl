@@ -1,0 +1,4 @@
+Contact: https://gcdn.boxabl.com/documents/bugbounty/Boxabl%20Policy.pdf
+Expires: 2027-01-01T08:00:00.000Z
+Preferred-Languages: en
+Canonical: https://www.boxabl.com/.well-known/security.txt
