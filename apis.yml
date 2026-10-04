@@ -48,7 +48,7 @@ tags:
 - Construction
 - Manufacturing
 - Housing
-- Real-Estate
+- Real Estate
 - Modular Homes
 - Prefabricated Construction
 - Accessory Dwelling Units
@@ -65,6 +65,7 @@ tags_raw:
 - Accessory Dwelling Units
 - Nasdaq
 - Consumer Products
+- Real-Estate
 apis: []
 maintainers:
 - FN: Kin Lane
