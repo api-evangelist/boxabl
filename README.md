@@ -64,18 +64,86 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-BOXABL Inc. is a Las Vegas, Nevada manufacturer of factory-built, foldable homes, founded in 2017 and trading on Nasdaq under the ticker BXBL. Homes are assembled on a production line in a climate-controlled factory, folded to 8.5 x 20 feet for shipment, and unfolded on site in about two hours. The Casita is the current production model (studio, one-bedroom, two-bedroom; unit-only or turnkey), alongside the Baby Box travel trailer and a multi-unit Developer Series catalog.
+BOXABL Inc. is a Las Vegas, Nevada manufacturer of factory-built, foldable homes, founded in 2017 and trading on Nasdaq under the ticker BXBL. Its homes are assembled on a production line in a climate-controlled factory rather than on site, then folded to 8.5 by 20 feet for shipment by truck, rail, sea or air and unfolded on the pad in about two hours. The Casita is the current production model, sold as a studio, one-bedroom and two-bedroom in unit-only or turnkey configurations, with a Baby Box travel trailer and a multi-unit Developer Series catalog alongside it. BOXABL publishes no public API, developer portal or machine-readable API contract; its machine-readable surface is an agent-facing llms.txt, a permissive AI-crawler robots.txt, and an RFC 9116 security.txt pointing at a real responsible-disclosure and bug bounty policy.
 
-- https://www.boxabl.com/
-- https://forgeglobal.com/boxabl_stock/
+**Areas:** Company · Construction · Manufacturing · Housing · Real Estate · Modular Homes · Prefabricated Construction · Accessory Dwelling Units · NASDAQ · Consumer Products
 
-## API surface
+## Boxabl on APIs.io
 
-**BOXABL publishes no public API.** Contract discovery was run against `boxabl.com`, `www.boxabl.com`, `api.boxabl.com` (NXDOMAIN) and `gcdn.boxabl.com`: no OpenAPI/Swagger at any host root, no GraphQL endpoint, no MCP server, no A2A agent card at either the canonical or legacy well-known path, no AsyncAPI or webhook surface, and no first-party SDK on any package registry. The `/developers` page is a housing catalog for real-estate developers, not a developer portal.
+Everything profiled for Boxabl is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/boxabl/](https://apis.io/providers/boxabl/)** — or go straight to one of the APIs or properties below.
 
-## What it does publish
+### Published properties
 
-- **`llms/boxabl-llms.txt`** — a real, well-formed `llms.txt` served at `https://www.boxabl.com/llms.txt`, saved verbatim. Products with price ranges and dimensions, shipping states, company facts, key pages, and an explicit answer-engine usage clause. Paired with a robots.txt that names GPTBot, ClaudeBot, PerplexityBot, Google-Extended, Applebot-Extended and CCBot with `Allow: /`.
-- **`well-known/boxabl-security.txt`** — an unexpired RFC 9116 `security.txt`.
-- **`security/boxabl-vulnerability-disclosure.yml`** — a genuine responsible-disclosure / bug bounty program with defined scope, rules of engagement, safe harbour, `bugs@boxabl.com` submission channel and CVSS-linked discretionary compensation.
-- **`security/boxabl-domain-security.yml`** — strong domain posture: TLS 1.3, HSTS `max-age=63072000`, DNSSEC enabled, CAA records set, SPF present, DMARC `p=reject`.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Boxabl Domain Security](https://apis.io/security/boxabl/boxabl-domain-security/)
+- [Boxabl Vulnerability Disclosure](https://apis.io/security/boxabl/boxabl-vulnerability-disclosure/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.boxabl.com/)
+- [Pricing](https://www.boxabl.com/casita)
+- [Support](https://www.boxabl.com/support)
+- [Blog](https://www.boxabl.com/blog)
+- [Security](https://gcdn.boxabl.com/documents/bugbounty/Boxabl%20Policy.pdf)
+- [Terms of service](https://gcdn.boxabl.com/Boxabl-Inc.-Terms-of-Service-4-23-24.pdf)
+- [Privacy policy](https://gcdn.boxabl.com/Boxabl-Inc.-Privacy-Policy-4-23-24.pdf)
+
+## API Evangelist rating
+
+**Kin Score 15.3** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 7.1 |
+| Access clarity | 31.6 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 19.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/boxabl/](https://apis.io/providers/boxabl/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Boxabl: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/boxabl/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
